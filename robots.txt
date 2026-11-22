@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://pairdrop.github.io/sitemap.xml
+Sitemap: https://pairdrophub.github.io/sitemap.xml
+
