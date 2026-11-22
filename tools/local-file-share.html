@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local File Share — PairDrop</title><meta name="description" content="Turn a file into a local download link."><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f4f7f6;color:#16211d;line-height:1.65}
+a{color:#0b6e4f}header{background:#0b6e4f;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+header a{color:#fff;text-decoration:none;margin:0 8px;font-size:14px}header b{font-size:20px}
+.hero{padding:44px 20px 30px;text-align:center;background:linear-gradient(135deg,#0b6e4f,#0ea47a);color:#fff}.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 10px}.hero p{max-width:720px;margin:0 auto;font-size:17px;opacity:.95}
+.wrap{max-width:1080px;margin:0 auto;padding:20px}.card{background:#fff;border:1px solid #dfe8e4;border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+input,textarea,select{width:100%;padding:11px;border-radius:9px;border:1px solid #c8d5d0;font-size:15px;margin:7px 0;font-family:inherit}
+button{background:#0b6e4f;color:#fff;border:0;padding:11px 20px;border-radius:9px;font-size:15px;cursor:pointer;font-weight:700;margin:4px 4px 4px 0}
+button.sec{background:#e6f4ee;color:#0b6e4f;border:1px solid #0b6e4f}
+.masonry{columns:3 260px;column-gap:16px}.masonry .tile{display:inline-block;width:100%;margin:0 0 16px;background:#fff;border:1px solid #dfe8e4;border-radius:12px;overflow:hidden;text-decoration:none;color:#16211d;break-inside:avoid}
+.masonry .tile img,.card img.heroimg{width:100%;height:auto;display:block;border-radius:8px}
+.tile .pad{padding:12px}.tile h3{font-size:16px;margin:0 0 6px}.tile p{font-size:13px;color:#5a6b64;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}.tile2{background:#fff;border:1px solid #dfe8e4;border-radius:12px;padding:16px;text-decoration:none;color:#16211d}
+.note{background:#fff8e1;border:1px solid #e6c200;border-radius:10px;padding:12px;font-size:14px}
+footer{padding:26px 20px;text-align:center;color:#5a6b64;font-size:13px}h2{color:#0b6e4f}.small{font-size:13px;color:#5a6b64}
+pre{background:#f0f4f2;padding:12px;border-radius:8px;overflow:auto;white-space:pre-wrap;word-break:break-all}code{word-break:break-all}
+@media(max-width:640px){.wrap{padding:14px}.card{padding:16px}}</style></head><body>
+<header><b>PairDrop</b><nav><a href="../index.html">Home</a><a href="../tools/">Tools</a><a href="../guides/">Guides</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></nav></header>
+<main class="wrap"><h1>Local File Share</h1><div class="card"><p class="note"><strong>Local only:</strong> the file never leaves this device and is not uploaded. The download link works only in this browser until you close or refresh the page.</p>
+<label>Choose a file</label><input type="file" id="f"><button type="button" onclick="go()">Create local download link</button><div id="out"></div></div>
+<script>var cur=null;function go(){var f=document.getElementById('f').files[0];if(!f){document.getElementById('out').innerHTML='<p>Choose a file first.</p>';return;}if(cur)URL.revokeObjectURL(cur);cur=URL.createObjectURL(f);document.getElementById('out').innerHTML='<p>File: '+f.name+' ('+(f.size/1024).toFixed(1)+' KB, '+(f.type||'unknown type')+')</p><p><a href="'+cur+'" download="'+f.name+'">Download '+f.name+'</a></p><p class="small">To share with another device, use Text Share for text, or copy this file to the other device by cable, Wi-Fi or a USB drive. This link cannot be opened on a different device.</p>';}</script></main>
+<footer><p>PairDrop — Free browser tools and practical guides. <a href="../about.html">About</a> · <a href="../privacy.html">Privacy</a> · <a href="../disclaimer.html">Disclaimer</a> · <a href="../contact.html">Contact</a></p></footer>
+</body></html>
